@@ -10,7 +10,7 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: black;
   color: white;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .container {
@@ -20,8 +20,8 @@ body {
   min-height: 100vh;
   max-width: 780px;
   margin: 0 auto;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 input {
@@ -30,8 +30,7 @@ input {
 }
 
 .slider {
-  max-width: 700px;
-  height: 320px;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -40,6 +39,22 @@ input {
   width: 400%;
   height: auto;
   transition: 0.3s ease-out;
+}
+
+.slide {
+  width: 100%;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+}
+
+.text-control-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3%;
 }
 
 .slider-text {
@@ -57,13 +72,6 @@ input {
   width: 400%;
   height: auto;
   transition: 0.3s ease-out;
-}
-
-.text-control-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
 }
 
 .control-wrap {
@@ -106,8 +114,8 @@ label {
 }
 
 .control-wrap > label:active > .active-space {
-    border: solid 2px #D1CCA1;
-    background-color: #D1CCA1;
+  border: solid 2px #D1CCA1;
+  background-color: #D1CCA1;
 }
 
 #control1:checked ~ .slider > .slide-wrap {
@@ -140,4 +148,25 @@ label {
 
 #control4:checked ~ .text-control-wrap > .slider-text > .slider-text-wrap {
   transform: translateX(-75%);
+}
+
+@media (max-width: 480px) {
+
+    .text-control-wrap {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .control-wrap {
+        order: -1;
+        margin: 0 auto;
+    }
+
+    .slider-text {
+        align-self: flex-start;
+    }
+
+    .slider-text-wrap {
+        padding-top: 3%;
+    }
 }

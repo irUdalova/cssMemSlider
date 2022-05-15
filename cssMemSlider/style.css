@@ -1,8 +1,143 @@
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 780px;
+  margin: 0 auto;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+input {
+  opacity: 0;
+  height: 0;
+}
+
+.slider {
+  max-width: 700px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.slide-wrap {
+  display: flex;
+  width: 400%;
+  height: auto;
+  transition: 0.3s ease-out;
+}
+
+.slider-text {
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.text {
+  max-width: 300px;
+  width: 100%;
+}
+
+.slider-text-wrap {
+  display: flex;
+  width: 400%;
+  height: auto;
+  transition: 0.3s ease-out;
+}
+
+.text-control-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.control-wrap {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.3s;  
+}
+
+.active-space {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: solid 2px white;
+  border-radius: 999px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;  
+}
+
+#control1:checked ~ .text-control-wrap > .control-wrap > label[for="control1"] > .active-space,
+#control2:checked ~ .text-control-wrap > .control-wrap > label[for="control2"] > .active-space,
+#control3:checked ~ .text-control-wrap > .control-wrap > label[for="control3"] > .active-space,
+#control4:checked ~ .text-control-wrap > .control-wrap > label[for="control4"] > .active-space {
+  background-color: white;
+}
+
+.control-wrap > label > .active-space:hover {
+  background-color: white;
+}
+
+.control-wrap > label:active > .active-space {
+    border: solid 2px #D1CCA1;
+    background-color: #D1CCA1;
+}
+
+#control1:checked ~ .slider > .slide-wrap {
+  transform: translateX(0%);
+}
+
+#control2:checked ~ .slider > .slide-wrap {
+  transform: translateX(-25%);
+}
+
+#control3:checked ~ .slider > .slide-wrap {
+  transform: translateX(-50%);
+}
+
+#control4:checked ~ .slider > .slide-wrap {
+  transform: translateX(-75%);
+}
+
+#control1:checked ~ .text-control-wrap > .slider-text > .slider-text-wrap {
+  transform: translateX(0%);
+}
+
+#control2:checked ~ .text-control-wrap > .slider-text > .slider-text-wrap {
+  transform: translateX(-25%);
+}
+
+#control3:checked ~ .text-control-wrap > .slider-text > .slider-text-wrap {
+  transform: translateX(-50%);
+}
+
+#control4:checked ~ .text-control-wrap > .slider-text > .slider-text-wrap {
+  transform: translateX(-75%);
+}

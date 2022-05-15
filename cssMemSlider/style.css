@@ -8,7 +8,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: black;
+  background-color: #1b1b22;
   color: white;
   font-size: 1rem;
 }
@@ -53,13 +53,14 @@ input {
 .text-control-wrap {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 3%;
 }
 
 .slider-text {
   overflow: hidden;
   max-width: 300px;
+  width: 100%;
 }
 
 .text {
@@ -114,8 +115,8 @@ label {
 }
 
 .control-wrap > label:active > .active-space {
-  border: solid 2px #D1CCA1;
-  background-color: #D1CCA1;
+  border: solid 2px #3f4d63;
+  background-color: #3f4d63;
 }
 
 #control1:checked ~ .slider > .slide-wrap {
@@ -163,7 +164,7 @@ label {
     }
 
     .slider-text {
-        align-self: flex-start;
+        align-self: flex-start;        
     }
 
     .slider-text-wrap {

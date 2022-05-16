@@ -94,8 +94,8 @@ label {
 
 .active-space {
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 50%;
+  height: 50%;
   border: solid 2px white;
   border-radius: 999px;
   background-color: transparent;
